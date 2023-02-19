@@ -16,6 +16,7 @@ export const Skills: FC<SkillsPropsType> = ({skills}) => {
                 <div className={s.skills}>
                     {skills.map(skill =>
                         <Skill
+                            key={skill.id}
                             title={skill.title}
                             description={skill.description}
                         />

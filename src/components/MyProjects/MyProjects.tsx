@@ -1,23 +1,24 @@
 import React, {FC} from 'react';
-import s from './Skills.module.css'
+import s from './MyProjects.module.css'
 import sContainer from '../../common/styles/Container.module.css'
-import {Skill} from './Project/Project';
+import {Project} from './Project/Project';
 import {SkillsType} from '../../state/skill-reducer';
 
-type SkillsPropsType = {
-    skills: SkillsType[]
+type MyProjectsPropsType = {
+    myProjects: SkillsType[]
 }
 
-export const MyProjects: FC<SkillsPropsType> = ({skills}) => {
+export const MyProjects: FC<MyProjectsPropsType> = ({myProjects}) => {
     return (
-        <div className={s.skillsBlock}>
-            <div className={`${sContainer.container} ${s.skillsContainer}`}>
-                <h2 className={s.title}>Skills</h2>
-                <div className={s.skills}>
-                    {skills.map(skill =>
-                        <Skill
-                            title={skill.title}
-                            description={skill.description}
+        <div className={s.myProjectsBlock}>
+            <div className={`${sContainer.container} ${s.myProjectsContainer}`}>
+                <h2 className={s.title}>My Project</h2>
+                <div className={s.projects}>
+                    {myProjects.map(project =>
+                        <Project
+                            key={project.id}
+                            title={project.title}
+                            description={project.description}
                         />
                     )}
                 </div>
